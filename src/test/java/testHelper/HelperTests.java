@@ -55,4 +55,7 @@ public class HelperTests {
         $(".search-result__title").shouldHave(text(string));
     }
 
+
+    public void closePopup() { $x("//a[text()='Принимаю условия']").click();}
+
 }
