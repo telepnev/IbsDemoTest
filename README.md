@@ -19,6 +19,8 @@ Gradle + JUnit 5`
 
 Пару дефектов которых я нашел 
 
++№1+
+
 **Кривая верстка на мобильном устройстве**
 
 `Summary`
@@ -57,6 +59,7 @@ Minor
 `Attachment`
 ![Report](src/main/resources/3.jpg)
 
++№2+
 
 **Нерабочая ссылка**
 
@@ -96,7 +99,10 @@ Low
 `Attachment`
 ![Report](src/main/resources/4.png)
 
++№3+
+
 **Нет возможности просмотреть вакансии с мобильного телефона**
+
 `Summary`
 
 On the main Job page, the user cannot click on links with vacancies
@@ -134,7 +140,7 @@ Minor
 
 `Attachment`
 
-![Report](src/main/resources/video.mp4)
++№4+
 
 И так по мелочт совсем
 ![Report](src/main/resources/6.png)
