@@ -140,6 +140,7 @@ Minor
 
 `Attachment`
 
+link for video screen **https://yadi.sk/i/XxJ9JHyAAH9eFg**
 +№4+
 
 И так по мелочт совсем
