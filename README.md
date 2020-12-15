@@ -159,7 +159,7 @@ link for video screen **https://yadi.sk/i/XxJ9JHyAAH9eFg**
 ------------------------------------------------------------------
 +№4+
 
-И так по мелочт совсем
+И так по мелочи
 ![Report](src/main/resources/6.png)
 ![Report](src/main/resources/5.jpg)
 
