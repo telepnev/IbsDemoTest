@@ -154,7 +154,7 @@ Minor
 
 `Attachment`
 
-link for video screen **https://yadi.sk/i/XxJ9JHyAAH9eFg**
+link for video screen **https://yadi.sk/i/4CDHUdnD7_Seew**
 
 ------------------------------------------------------------------
 +№4+
