@@ -1,12 +1,9 @@
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import testHelper.BaseTest;
 
 import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.text;
@@ -16,15 +13,8 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("telepnev")
 @Feature("Контакты")
-public class CheckingContatsTests {
+public class CheckingContatsTests extends BaseTest {
     ContactData contact = new ContactData();
-    @BeforeEach
-    public void setUp() {
-        Configuration.startMaximized = true;
-        SelenideLogger.addListener("allure", new AllureSelenide()
-                .savePageSource(true)
-                .screenshots(true));
-    }
 
     @Test
     @Story("Проверка контактных данных")
@@ -94,4 +84,17 @@ public class CheckingContatsTests {
         step("Сверяем юр. адрес офиса в Санкт-Петербурге", () -> {$(byText("Юридический и почтовый адрес")).click();
             $(".view-address-block__content").shouldHave(text(contact.SaintPetersburgLegalAddress));});
     }
+
+    @Test
+    @Story("Проверка контактных данных")
+    @DisplayName("Проверка наличия контактных данных на странице офиса Москва (головной офис)")
+    public void notCorrectMoscowAddressTest() {
+        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Московского офиса", () -> $(byText("Москва (головной офис)")).click());
+        step("Сверяем адрес офиса в Москве", () -> $(".contacts__info").shouldHave(text(contact.MoscowAddress)));
+        step("Сверяем телефона офиса в Москве", () -> $(".contacts__info").shouldHave(text("+7 123 456 789")));
+        step("Сверяем юр. адрес офиса в Москве", () -> {$(byText("Юридический и почтовый адрес")).click();
+            $(".view-address-block__content").shouldHave(text(contact.MoscowLegalAddress));});
+    }
+
 }

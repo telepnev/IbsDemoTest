@@ -1,14 +1,9 @@
-
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+import testHelper.BaseTest;
 import testHelper.HelperTests;
 
 import static com.codeborne.selenide.Condition.text;
@@ -19,17 +14,10 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("telepnev")
 @Feature("Главная страница")
-public class IbsPageTests {
-    HelperTests helperTests = new HelperTests();
+public class IbsPageTests extends BaseTest {
     final String Url = "https://ibs.ru/";
     final String searchingString = "Управление финансами и учет";
-    @BeforeEach
-    public void setUp() {
-        Configuration.startMaximized = true;
-        SelenideLogger.addListener("allure", new AllureSelenide()
-                .savePageSource(true)
-                .screenshots(true));
-    }
+    HelperTests helperTests = new HelperTests();
 
     @Test
     @Story("Пользователь переходит на главную страницу")
@@ -42,7 +30,7 @@ public class IbsPageTests {
     }
 
     @Test
-    @Story("Проверка контактных данных")
+    @Story("Проверяем работу поиска по сайту")
     @DisplayName("Поиск публикаций, новостей, решений, проектов")
     public void siteSearchTest() {
         step("Проверяем работу поиска по сайту ищем = " + searchingString, () -> helperTests.search(searchingString));
@@ -51,7 +39,7 @@ public class IbsPageTests {
 
     @Test
     @Story("Пользователь переходит в раздел 'Управление документооборотом'")
-    @DisplayName("БИЗНЕС-ПРИЛОЖЕНИЯ")
+    @DisplayName("Переход в раздел 'Управление документооборотом'")
     public void businessApplicationsTest() {
         step("Открываем главную страницу", () ->{open("https://ibs.ru/");});
         step("Close popup", () -> helperTests.closePopup());
@@ -74,9 +62,6 @@ public class IbsPageTests {
         step("Заполняем Телефон", () -> $("#form_text_62").val(helperTests.getPhone()).pressTab());
         step("Заполняем Email", () -> $("#form_email_63").val(helperTests.getEmail()).pressTab());
         step("Заполняем Ваше сообщение", () -> $("#form_textarea_64").val(helperTests.getTextMessage()).pressTab());
-        $("#info_click").click();
-
-        sleep(4000);
+        step("Отправить форму", () -> $("#info_click").click());
     }
-
 }

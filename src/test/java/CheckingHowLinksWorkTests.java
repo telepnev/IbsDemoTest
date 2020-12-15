@@ -1,8 +1,9 @@
-
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import testHelper.BaseTest;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -104,6 +105,4 @@ public class CheckingHowLinksWorkTests extends BaseTest {
             Assertions.assertEquals(youtuberUrl, titleString, "Address link not equals!!!");
         });
     }
-
-
 }
