@@ -52,7 +52,9 @@ N/A
 `Platform`
 
 HONOR P20 Pro
+
 Android 10; YAL-L41 Build/HUAWEIYAL-L41
+
 Chrome 87.0.4280.101
 
 `Priority`
@@ -145,7 +147,9 @@ N/A
 `Platform`
 
 HONOR P20 Pro 
+
 Android 10; YAL-L41 Build/HUAWEIYAL-L41
+
 Chrome 87.0.4280.101
 
 `Priority`
