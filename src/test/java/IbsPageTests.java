@@ -41,13 +41,24 @@ public class IbsPageTests extends BaseTest {
     @Story("Пользователь переходит в раздел 'Управление документооборотом'")
     @DisplayName("Переход в раздел 'Управление документооборотом'")
     public void businessApplicationsTest() {
-        step("Открываем главную страницу", () ->{open("https://ibs.ru/");});
-        step("Close popup", () -> helperTests.closePopup());
-        step("Переходим в 'БИЗНЕС-ПРИЛОЖЕНИЯ'", () ->{$(".header__menu").click();
+        step("Открываем главную страницу", () ->
+        {
+            open("https://ibs.ru/");
+        });
+        step("Close popup", () ->
+                helperTests.closePopup());
+        step("Переходим в 'БИЗНЕС-ПРИЛОЖЕНИЯ'", () ->
+        {
+            $(".header__menu").click();
+
             $(byText("Бизнес-приложения")).click();
-            $("h1").shouldHave(text("Бизнес-приложения"));});
-        step("Переходим в 'Управление документооборотом'", () -> {$x("//a[@href='/products/workflow/upravlenie-dokumentooborotom/']").click();
-            $("h1").shouldHave(text("Управление документооборотом"));});
+            $("h1").shouldHave(text("Бизнес-приложения"));
+        });
+        step("Переходим в 'Управление документооборотом'", () ->
+        {
+            $x("//a[@href='/products/workflow/upravlenie-dokumentooborotom/']").click();
+            $("h1").shouldHave(text("Управление документооборотом"));
+        });
     }
 
     @Test
@@ -56,12 +67,18 @@ public class IbsPageTests extends BaseTest {
     public void requestAdditionalInformationTest() {
         step("Переходим на страницу 'Управление документооборотом'", () -> open("https://ibs.ru/products/workflow/upravlenie-dokumentooborotom/"));
         step("Close popup", () -> helperTests.closePopup());
-        step("Заполняем Имя", () -> $("#form_text_59").val(helperTests.getFirstName()).pressTab());
-        step("Заполняем Название компании", () -> $("#form_text_60").val(helperTests.getCompanyName()).pressTab());
-        step("Заполняем Город", () -> $("#form_text_61").val(helperTests.getCity()).pressTab());
-        step("Заполняем Телефон", () -> $("#form_text_62").val(helperTests.getPhone()).pressTab());
-        step("Заполняем Email", () -> $("#form_email_63").val(helperTests.getEmail()).pressTab());
-        step("Заполняем Ваше сообщение", () -> $("#form_textarea_64").val(helperTests.getTextMessage()).pressTab());
+        step("Заполняем Имя", () ->
+                $("#form_text_59").val(helperTests.getFirstName()).pressTab());
+        step("Заполняем Название компании", () ->
+                $("#form_text_60").val(helperTests.getCompanyName()).pressTab());
+        step("Заполняем Город", () ->
+                $("#form_text_61").val(helperTests.getCity()).pressTab());
+        step("Заполняем Телефон", () ->
+                $("#form_text_62").val(helperTests.getPhone()).pressTab());
+        step("Заполняем Email", () ->
+                $("#form_email_63").val(helperTests.getEmail()).pressTab());
+        step("Заполняем Ваше сообщение", () ->
+                $("#form_textarea_64").val(helperTests.getTextMessage()).pressTab());
         step("Отправить форму", () -> $("#info_click").click());
     }
 }

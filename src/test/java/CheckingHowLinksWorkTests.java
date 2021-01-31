@@ -25,11 +25,14 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS - Главная | Facebook")
     public void checkFaceBookUrlTest() {
-        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () -> open("https://ibs.ru/ibsservice/"));
-        step("Кликаем по иконке 'Facebook'", () -> {
+        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () ->
+                open("https://ibs.ru/ibsservice/"));
+        step("Кликаем по иконке 'Facebook'", () ->
+        {
             $x("//ul[@class='social-links__list']//li[1]").click();
         });
-        step("Проверка перенаправления на страницу 'IBS - Главная | Facebook'", () -> {
+        step("Проверка перенаправления на страницу 'IBS - Главная | Facebook'", () ->
+        {
             String titleString = switchTo().window(1).getTitle();
             Assertions.assertEquals(faceBookUrl, titleString, "Address link not equals!!!");
         });
@@ -40,11 +43,15 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS ru - in")
     public void checkInUrlTest() {
-        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () -> open("https://ibs.ru/ibsservice/"));
-        step("Кликаем по иконке 'in'", () -> {
+        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () ->
+                open("https://ibs.ru/ibsservice/"));
+        step("Кликаем по иконке 'in'", () ->
+        {
             $x("//ul[@class='social-links__list']//li[2]").click();
         });
-        step("Проверка перенаправления на страницу 'Доступ к ресурсу заблокирован'", () -> {
+
+        step("Проверка перенаправления на страницу 'Доступ к ресурсу заблокирован'", () ->
+        {
             String titleString = switchTo().window(1).getTitle();
             Assertions.assertEquals(inUrl, titleString, "Address link not equals!!!");
         });
@@ -54,14 +61,14 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS | ВКонтакте")
     public void checkVkUrlTest() {
-        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () -> open("https://ibs.ru/ibsservice/"));
-        step("Кликаем по иконке 'ВКонтакте'", () -> {
-            $x("//ul[@class='social-links__list']//li[3]").click();
-        });
-        step("Проверка перенаправления на страницу 'IBS | ВКонтакте'", () -> {
-            String titleString = switchTo().window(1).getTitle();
-            Assertions.assertEquals(vkUrl, titleString, "Address link not equals!!!");
-        });
+        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () ->
+                open("https://ibs.ru/ibsservice/"));
+        step("Кликаем по иконке 'ВКонтакте'", () ->
+                step("Проверка перенаправления на страницу 'IBS | ВКонтакте'", () ->
+                {
+                    String titleString = switchTo().window(1).getTitle();
+                    Assertions.assertEquals(vkUrl, titleString, "Address link not equals!!!");
+                }));
     }
 
     @Test
@@ -96,7 +103,8 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS ru - YouTube")
     public void checkYouTuberUrlTest() {
-        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () -> open("https://ibs.ru/ibsservice/"));
+        step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () ->
+                open("https://ibs.ru/ibsservice/"));
         step("Кликаем по иконке 'YouTube'", () -> {
             $x("//ul[@class='social-links__list']//li[6]").click();
         });

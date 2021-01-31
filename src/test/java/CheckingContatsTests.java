@@ -20,20 +20,27 @@ public class CheckingContatsTests extends BaseTest {
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия 7 контактных данных на странице")
     public void openMainContactPageTest() {
-        step("Открываем страницу контактов", () -> {open("https://ibs.ru/contacts/");
+        step("Открываем страницу контактов", () ->
+        {open("https://ibs.ru/contacts/");
             $("h1").shouldHave(text("Контакты"));});
-        step("Проверяем что кол-во офисов равно 7", () -> $$(".aside-navigation__item").shouldHaveSize(7));
+        step("Проверяем что кол-во офисов равно 7", () ->
+                $$(".aside-navigation__item").shouldHaveSize(7));
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Москва (головной офис)")
     public void verifyMoscowAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Московского офиса", () -> $(byText("Москва (головной офис)")).click());
-        step("Сверяем адрес офиса в Москве", () -> $(".contacts__info").shouldHave(text(contact.MoscowAddress)));
-        step("Сверяем телефона офиса в Москве", () -> $(".contacts__info").shouldHave(text(contact.MoscowPhone)));
-        step("Сверяем юр. адрес офиса в Москве", () -> {$(byText("Юридический и почтовый адрес")).click();
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Московского офиса", () ->
+                $(byText("Москва (головной офис)")).click());
+        step("Сверяем адрес офиса в Москве", () ->
+                $(".contacts__info").shouldHave(text(contact.MoscowAddress)));
+        step("Сверяем телефона офиса в Москве", () ->
+                $(".contacts__info").shouldHave(text(contact.MoscowPhone)));
+        step("Сверяем юр. адрес офиса в Москве", () ->
+        { $(byText("Юридический и почтовый адрес")).click();
             $(".view-address-block__content").shouldHave(text(contact.MoscowLegalAddress));});
     }
 
@@ -41,60 +48,84 @@ public class CheckingContatsTests extends BaseTest {
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Нижний Новгород")
     public void verifyNizhnyNovgorodAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Нижний Новгород", () -> $(byText("Нижний Новгород")).click());
-        step("", () -> $(".contacts__address").shouldNotBe(empty));
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Нижний Новгород", () ->
+                $(byText("Нижний Новгород")).click());
+        step("", () ->
+                $(".contacts__address").shouldNotBe(empty));
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Пенза")
     public void verifyPenzaAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Пенза", () -> $(byText("Пенза")).click());
-        step("", () -> $(".contacts__address").shouldNotBe(empty));
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Пенза", () ->
+                $(byText("Пенза")).click());
+        step("", () ->
+                $(".contacts__address").shouldNotBe(empty));
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Пермь")
     public void verifyPermAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Пермь", () -> $(byText("Пермь")).click());
-        step("", () -> $(".contacts__address").shouldNotBe(empty));
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Пермь", () ->
+                $(byText("Пермь")).click());
+        step("", () ->
+                $(".contacts__address").shouldNotBe(empty));
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Ульяновск")
     public void verifyUlyanovskAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Ульяновск", () -> $(byText("Ульяновск")).click());
-        step("", () -> $(".contacts__address").shouldNotBe(empty));
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Ульяновск", () ->
+                $(byText("Ульяновск")).click());
+        step("", () ->
+                $(".contacts__address").shouldNotBe(empty));
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Санкт-Петербург")
     public void verifySaintPetersburgAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов офиса в Санкт-Петербурге", () -> $(byText("Санкт-Петербург")).click());
-        step("Сверяем адрес офиса в Санкт-Петербурге", () -> $(".contacts__info").shouldHave(text(contact.SaintPetersburgAddress)));
-        step("Сверяем телефона офиса в Санкт-Петербурге", () -> $(".contacts__info").shouldHave(text(contact.SaintPetersburgPhone)));
-        step("Сверяем юр. адрес офиса в Санкт-Петербурге", () -> {$(byText("Юридический и почтовый адрес")).click();
-            $(".view-address-block__content").shouldHave(text(contact.SaintPetersburgLegalAddress));});
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов офиса в Санкт-Петербурге", () ->
+                $(byText("Санкт-Петербург")).click());
+        step("Сверяем адрес офиса в Санкт-Петербурге", () ->
+                $(".contacts__info").shouldHave(text(contact.SaintPetersburgAddress)));
+        step("Сверяем телефона офиса в Санкт-Петербурге", () ->
+                $(".contacts__info").shouldHave(text(contact.SaintPetersburgPhone)));
+        step("Сверяем юр. адрес офиса в Санкт-Петербурге", () ->
+        {
+            $(byText("Юридический и почтовый адрес")).click();
+            $(".view-address-block__content").shouldHave(text(contact.SaintPetersburgLegalAddress));
+        });
     }
 
     @Test
     @Story("Проверка контактных данных")
     @DisplayName("Проверка наличия контактных данных на странице офиса Москва (головной офис)")
     public void notCorrectMoscowAddressTest() {
-        step("Открываем страницу контактов", () -> open("https://ibs.ru/contacts/"));
-        step("Переходим на страницу контактов Московского офиса", () -> $(byText("Москва (головной офис)")).click());
-        step("Сверяем адрес офиса в Москве", () -> $(".contacts__info").shouldHave(text(contact.MoscowAddress)));
-        step("Сверяем телефона офиса в Москве", () -> $(".contacts__info").shouldHave(text("+7 123 456 789")));
-        step("Сверяем юр. адрес офиса в Москве", () -> {$(byText("Юридический и почтовый адрес")).click();
-            $(".view-address-block__content").shouldHave(text(contact.MoscowLegalAddress));});
+        step("Открываем страницу контактов", () ->
+                open("https://ibs.ru/contacts/"));
+        step("Переходим на страницу контактов Московского офиса", () ->
+                $(byText("Москва (головной офис)")).click());
+        step("Сверяем адрес офиса в Москве", () ->
+                $(".contacts__info").shouldHave(text(contact.MoscowAddress)));
+        step("Сверяем телефона офиса в Москве", () ->
+                $(".contacts__info").shouldHave(text("+7 123 456 789")));
+        step("Сверяем юр. адрес офиса в Москве", () ->
+        { $(byText("Юридический и почтовый адрес")).click();
+            $(".view-address-block__content").shouldHave(text(contact.MoscowLegalAddress));
+        });
     }
-
 }
