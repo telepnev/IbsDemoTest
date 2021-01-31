@@ -8,17 +8,21 @@ Gradle + JUnit 5`
 Найдено пару некритичных багов, баг репорт приложен ниже.
 
 **Общая статистика.**
-![Report](src/main/resources/1.png)
+
+![Report](src/main/resources/IBS_02.png).png)
 
 **Пример отчета с ошибкой. Тест был специально испорчен.**
+
 ![Report](src/main/resources/1_1.png)
 ![Report](src/main/resources/1_2.png)
 
 **Битый линк на YouTube**
+
 ![Report](src/main/resources/2.png)
 
+После прохождения тестов в Телеграм Чат приходит сообщение
 
-
+![Report](src/main/resources/IBS_04.png)
 ------------------------------------------------------------------
 
 
@@ -162,7 +166,7 @@ Minor
 
 `Attachment`
 
-link for video screen **https://yadi.sk/i/4CDHUdnD7_Seew**
+### `link for video screen` **https://yadi.sk/i/4CDHUdnD7_Seew**
 
 
 
