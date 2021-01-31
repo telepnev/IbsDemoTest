@@ -2,6 +2,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import testHelper.BaseTest;
@@ -88,6 +89,7 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Test
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS Профиль / Твиттер")
+    @Disabled("Заблокирован")
     public void checkTwitterUrlTest() {
         step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () -> open("https://ibs.ru/ibsservice/"));
         step("Кликаем по иконке 'Твиттер'", () -> {
@@ -102,6 +104,7 @@ public class CheckingHowLinksWorkTests extends BaseTest {
     @Test
     @Story("Пользователь переходит по соц ссылкам на странице Центр аутсорсинга")
     @DisplayName("Переход в IBS ru - YouTube")
+    @Disabled("Отключен до 20.02.2021 - ведуться тех. работы! ")
     public void checkYouTuberUrlTest() {
         step("Переходим на страницу Центр аутсорсинга и сопровождения ИТ-систем", () ->
                 open("https://ibs.ru/ibsservice/"));
